@@ -1,0 +1,7 @@
+keys:
+  - &admin_seb BA36003A8B70966C3B1F2E2146411B5ABFD6C567
+  - &laptop_clover age1exfya42m8ftgfmzmmc0a67chymca8t8whpvastfg7pk9cszas39qv0pz05
+creation_rules:
+  - path_regex: hosts/clover/[^/]+\.yaml$
+    pgp: *admin_seb
+    age: *laptop_clover
