@@ -60,7 +60,7 @@
     };
     bluetooth = {
       enable = true;
-      package = pkgs.bluezFull;
+      package = pkgs.bluez5-experimental;
       powerOnBoot = true;
     };
     opengl = {
