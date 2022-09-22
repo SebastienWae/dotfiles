@@ -146,6 +146,7 @@ in
         set preview_images_method kitty
       '';
       "ranger/plugins/devicons2".source = inputs.ranger-devicons2;
+      "transmission/settings.json".source = ./transmission/settings.json;
     };
 
     programs = {
