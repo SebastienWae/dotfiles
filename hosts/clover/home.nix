@@ -623,6 +623,9 @@ in
               in
               {
                 "F11" = "mode action";
+
+                "F12" = "nop kitti3";
+
                 "XF86AudioMicMute" = audio_cmd "set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
                 "XF86AudioMute" = audio_cmd "set-mute @DEFAULT_AUDIO_SINK@ toggle";
                 "XF86AudioLowerVolume" = volume_cmd "set-volume @DEFAULT_AUDIO_SINK@ 5%-";
@@ -722,8 +725,7 @@ in
             workspaceOutputAssign = [ ];
           };
           extraConfigEarly = ''
-            exec_always --no-startup-id kitti3
-            bindsym Shift+k nop kitti3
+            exec_always --no-startup-id kitti3 -p CT
           '';
           extraConfig = '''';
           extraOptions = [ ];
