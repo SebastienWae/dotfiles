@@ -622,6 +622,7 @@ in
                 media_player_cmd = cmd: "exec ${pkgs.playerctl}/bin/playerctl ${cmd}";
               in
               {
+                "F11" = "mode action";
                 "XF86AudioMicMute" = audio_cmd "set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
                 "XF86AudioMute" = audio_cmd "set-mute @DEFAULT_AUDIO_SINK@ toggle";
                 "XF86AudioLowerVolume" = volume_cmd "set-volume @DEFAULT_AUDIO_SINK@ 5%-";
@@ -702,9 +703,6 @@ in
                   "Shift+0" = "move container to workspace 10";
                 };
               };
-            keycodebindings = {
-              "197" = "mode action";
-            };
             output = { };
             seat = { };
             startup = [

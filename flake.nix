@@ -43,11 +43,7 @@
         sharedConfig = {
           allowUnfree = true;
         };
-        sharedOverlays = [
-          (final: prev: {
-            ctrl2f19 = import ./pkgs/ctrl2f19.nix { pkgs = final; };
-          })
-        ];
+        sharedOverlays = [ ];
         set = {
           "unstable" = {
             input = inputs.unstable;

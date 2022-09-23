@@ -125,14 +125,14 @@
     interception-tools = {
       enable = true;
       plugins = with pkgs.interception-tools-plugins; [
-        caps2esc
+        dual-function-keys
       ];
       udevmonConfig = ''
-        - JOB: "${pkgs.interception-tools}/bin/intercept -g $DEVNODE | ${pkgs.ctrl2f19}/bin/ctrl2f19 | ${pkgs.interception-tools-plugins.caps2esc}/bin/caps2esc -m 2 | ${pkgs.interception-tools}/bin/uinput -d $DEVNODE"
-          DEVICE:
-            EVENTS:
-              EV_KEY: [KEY_CAPSLOCK, KEY_ESC]
-      '';
+- JOB: "${pkgs.interception-tools}/bin/intercept -g $DEVNODE | ${pkgs.interception-tools-plugins.dual-function-keys}/bin/dual-function-keys -c ${./interception/dual-function-keys.yaml} | ${pkgs.interception-tools}/bin/uinput -d $DEVNODE"
+  DEVICE:
+    EVENTS:
+      EV_KEY: [KEY_CAPSLOCK, KEY_ESC, KEY_RIGHTCTRL, KEY_LEFTCTRL]
+'';
     };
     dbus.enable = true;
   };
