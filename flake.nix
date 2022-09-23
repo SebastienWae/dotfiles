@@ -25,6 +25,10 @@
     };
 
     # flakes
+    kitti3 = {
+      url = "github:SebastienWae/kitti3/nix";
+      inputs.nixpkgs.follows = "unstable";
+    };
 
     # others
     ranger-devicons2 = {
@@ -48,7 +52,9 @@
           "unstable" = {
             input = inputs.unstable;
             config = { };
-            overlays = [ ];
+            overlays = [
+              inputs.kitti3.overlay
+            ];
             patches = [ ];
           };
           "master" = {

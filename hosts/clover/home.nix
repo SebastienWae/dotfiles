@@ -129,6 +129,7 @@ in
         playerctl
         transmission-gtk
         ranger
+        kitti3
       ] ++ [
         nerdfont.jetbrains
       ];
@@ -722,7 +723,10 @@ in
             workspaceLayout = "default";
             workspaceOutputAssign = [ ];
           };
-          extraConfigEarly = '''';
+          extraConfigEarly = ''
+            exec_always --no-startup-id kitti3
+            bindsym Shift+k nop kitti3
+          '';
           extraConfig = '''';
           extraOptions = [ ];
           extraSessionCommands = ''
