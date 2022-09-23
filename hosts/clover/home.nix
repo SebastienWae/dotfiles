@@ -147,6 +147,7 @@ in
       '';
       "ranger/plugins/devicons2".source = inputs.ranger-devicons2;
       "transmission/settings.json".source = ./transmission/settings.json;
+      "lazygit/config.yml".source = ./lazygit/config.yml;
     };
 
     programs = {
