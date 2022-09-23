@@ -40,7 +40,9 @@
           allowUnfree = true;
         };
         sharedOverlays = [
-          (final: _prev: import ./pkgs/ctrl2f19.nix { pkgs = final; })
+          (final: prev: {
+            ctrl2f19 = import ./pkgs/ctrl2f19.nix { pkgs = final; };
+          })
         ];
         set = {
           "unstable" = {
