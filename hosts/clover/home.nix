@@ -622,9 +622,8 @@ in
                 media_player_cmd = cmd: "exec ${pkgs.playerctl}/bin/playerctl ${cmd}";
               in
               {
-                "F11" = "mode action";
-
-                "F12" = "nop kitti3";
+                "Ctrl+Mod1+Mod4+Home" = "mode action; nop";
+                "Ctrl+Mod1+Mod4+Prior" = "nop kitti3";
 
                 "XF86AudioMicMute" = audio_cmd "set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
                 "XF86AudioMute" = audio_cmd "set-mute @DEFAULT_AUDIO_SINK@ toggle";
